@@ -28,10 +28,10 @@ print(f"\nLo más rápido que puedes resolver este juego es en {num_optimal_move
 
 #Obtener entrada del usuario
 def get_input():
-    choices = ['L', 'M', 'R']  
+    choices = ['L', 'M', 'R']
 
     while True:
-        
+
         for i in range(len(stacks)):
             name = stacks[i].get_name()
             letter = choices[i]
@@ -49,7 +49,6 @@ def get_input():
             print("Entrada no válida. Intenta de nuevo.")
 
 
-        
 #Jugando el juego
 num_user_moves = 0
 
@@ -65,14 +64,14 @@ while right_stack.get_size() != num_disks:
         print("\n¿A qué pila quieres mover el disco?\n")
         to_stack = get_input()
 
-        
-        if from_stack.is_empty():  
+
+        if from_stack.is_empty():
             print("\n\nMovimiento no válido. Inténtalo de nuevo")
-        elif (to_stack.is_empty() or from_stack.peek() < to_stack.peek()):  
-            disk = from_stack.pop()  
-            to_stack.push(disk)      
-            num_user_moves += 1      
-            break                     
+        elif (to_stack.is_empty() or from_stack.peek() < to_stack.peek()):
+            disk = from_stack.pop()
+            to_stack.push(disk)
+            num_user_moves += 1
+            break
         else:
             print("\n\nMovimiento no válido. Inténtalo de nuevo")
 
