@@ -1,5 +1,5 @@
 from StackHanoi import Stack
-
+from Node import Node
 print("\n¡Vamos a jugar a las torres de Hanoi!")
 
 #Crear las pilas
