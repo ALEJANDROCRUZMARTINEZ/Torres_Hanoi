@@ -24,9 +24,29 @@ for i in range(num_disks, 0, -1):
 
 
 num_optimal_moves = (2 ** num_disks) - 1
-
+print(f"\nLo más rápido que puedes resolver este juego es en {num_optimal_moves} movimientos.")
 
 #Obtener entrada del usuario
+def get_input():
+    choices = ['L', 'M', 'R']  
+
+    while True:
+        
+        for i in range(len(stacks)):
+            name = stacks[i].get_name()
+            letter = choices[i]
+            print(f"Escribe {letter} para {name}")
+
+       
+        user_input = input("Elige una pila: ").strip().upper()
+
+        
+        if user_input in choices:
+            for i in range(len(stacks)):
+                if user_input == choices[i]:
+                    return stacks[i]
+        else:
+            print("Entrada no válida. Intenta de nuevo.")
 
 
         
