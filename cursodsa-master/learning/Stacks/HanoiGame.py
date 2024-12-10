@@ -51,3 +51,29 @@ def get_input():
 
         
 #Jugando el juego
+num_user_moves = 0
+
+while right_stack.get_size() != num_disks:
+    print("\n\n\n...Pilas actuales...")
+    for stack in stacks:
+        stack.print_items()
+
+    while True:
+        print("\n¿Desde qué pila quieres mover un disco?\n")
+        from_stack = get_input()
+
+        print("\n¿A qué pila quieres mover el disco?\n")
+        to_stack = get_input()
+
+        
+        if from_stack.is_empty():  
+            print("\n\nMovimiento no válido. Inténtalo de nuevo")
+        elif (to_stack.is_empty() or from_stack.peek() < to_stack.peek()):  
+            disk = from_stack.pop()  
+            to_stack.push(disk)      
+            num_user_moves += 1      
+            break                     
+        else:
+            print("\n\nMovimiento no válido. Inténtalo de nuevo")
+
+print(f"\n\nCompletaste el juego en {num_user_moves} movimientos y el número óptimo de movimientos es {num_optimal_moves}.")
